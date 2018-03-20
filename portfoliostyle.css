@@ -1,0 +1,654 @@
+﻿
+.container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 75px 75px 75px 400px 150px 75px 250px 150px 75px 225px 200px 150px 50px;
+}
+
+/*diplay for scrolling info*/
+
+section.grid-item-1 {
+    grid-column: 1 / span 7;
+    background-color: white;
+    border-top: double;
+    border-right: double;
+    border-bottom: double;
+    border-left: double;
+    border-right-color: darkblue;
+    border-left-color: darkblue;
+    border-top-color: darkblue;
+    border-bottom-color: darkblue;
+}
+
+/*Styling for the scrolling info across the top of the page*/
+.scroll-left {
+    height: 50px;
+    font-family: cursive;
+    font-size: larger;
+    overflow: hidden;
+    position: relative;
+    color: darkblue;
+}
+
+    .scroll-left p {
+        position: absolute;
+        width: 100%;
+        height: 50px;
+        margin: 0;
+        line-height: 50px;
+        text-align: center;
+        /* Starting position */
+        -moz-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+        /* Apply animation to this element */
+        -moz-animation: scroll-left 20s linear infinite;
+        -webkit-animation: scroll-left 20s linear infinite;
+        animation: scroll-left 20s linear infinite;
+    }
+/* Move it (define the animation) */
+@-moz-keyframes scroll-left {
+    0% {
+        -moz-transform: translateX(100%);
+    }
+
+    100% {
+        -moz-transform: translateX(-100%);
+    }
+}
+
+@-webkit-keyframes scroll-left {
+    0% {
+        -webkit-transform: translateX(100%);
+    }
+
+    100% {
+        -webkit-transform: translateX(-100%);
+    }
+}
+
+@keyframes scroll-left {
+    0% {
+        -moz-transform: translateX(100%); /* Browser bug fix */
+        -webkit-transform: translateX(100%); /* Browser bug fix */
+        transform: translateX(100%);
+    }
+
+    100% {
+        -moz-transform: translateX(-100%); /* Browser bug fix */
+        -webkit-transform: translateX(-100%); /* Browser bug fix */
+        transform: translateX(-100%);
+    }
+}
+/*styling for the nav bar*/
+
+ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: center;
+    justify-content: space-around;
+}
+
+a {
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    font-family: cursive;
+    font-size: large;
+    color: darkblue;
+}
+
+/*styling for nav bar*/
+
+section.grid-item-2 {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1 / span2;
+    justify-content: flex-start;
+    background-color: snow;
+    color: darkblue;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    font-family: 'segoe ui';
+}
+
+.nav {
+    height: 50px;
+    width: 100%;
+    background-color: darkblue;
+    position: relative;
+}
+
+    .nav > .nav-header {
+        display: inline;
+    }
+
+        .nav > .nav-header > .nav-title {
+            display: inline-block;
+            font-family: cursive;
+            font-size: 22px;
+            color: #fff;
+            padding: 10px 10px 10px 10px;
+        }
+
+    .nav > .nav-btn {
+        display: none;
+    }
+
+    .nav > .nav-links {
+        display: inline;
+        float: right;
+        font-size: 18px;
+    }
+
+        .nav > .nav-links > a {
+            display: inline-block;
+            padding: 13px 10px 13px 10px;
+            text-decoration: none;
+            color: #efefef;
+        }
+
+            .nav > .nav-links > a:hover {
+                background-color: rgba(0, 0, 0, 0.3);
+            }
+
+    .nav > #nav-check {
+        display: none;
+    }
+
+@media (max-width:600px) {
+    .nav > .nav-btn {
+        display: inline-block;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+    }
+
+        .nav > .nav-btn > label {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            padding: 13px;
+        }
+
+            .nav > .nav-btn > label:hover {
+                background-color: rgba(0, 0, 0, 0.3);
+            }
+
+            .nav > .nav-btn > label > span {
+                display: block;
+                width: 25px;
+                height: 10px;
+                border-top: 2px solid #eee;
+            }
+
+    .nav > .nav-links {
+        position: absolute;
+        display: block;
+        width: 100%;
+        background-color: darkblue;
+        height: 0px;
+        transition: all 0.3s ease-in;
+        overflow-y: hidden;
+        top: 50px;
+        left: 0px;
+    }
+
+        .nav > .nav-links > a {
+            display: block;
+            width: 100%;
+        }
+
+    .nav > #nav-check:not(:checked) + .nav-links {
+        height: 0px;
+    }
+
+    .nav > #nav-check:checked + .nav-links {
+        height: calc(100vh - 50px);
+        overflow-y: auto;
+    }
+}
+/*text display settings*/
+.h1 {
+    font-family: cursive;
+    color: darkblue;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    justify-content: flex-end;
+}
+
+.p.me {
+    display: flex;
+    margin-top: 0;
+    justify-content: flex-start;
+    flex-direction: row;
+    color: darkblue;
+    font-family: cursive;
+}
+/*picture*/
+
+section.grid-item-3 {
+    display: flex;
+    grid-column: 1 /span 2;
+    grid-row: 3 / span 5;
+    background-image: url('images/me&clara.jpg');
+    background-size: cover;
+    margin-left: 10px;
+}
+
+img {
+    display: flex;
+}
+/*about me*/
+
+section.grid-item-4 {
+    display: flex;
+    grid-column: 3 /span 2;
+    grid-row: 3;
+    margin-bottom: 0;
+    justify-content: center;
+    color: darkblue;
+    margin-left: 10px;
+    border-right: double;
+    border-right-color: darkblue;
+    font-family: cursive;
+    border-top: double;
+    border-right: double;
+    border-bottom: double;
+    border-left: double;
+    border-right-color: darkblue;
+    border-left-color: darkblue;
+    border-top-color: darkblue;
+    border-bottom-color: darkblue;
+}
+
+section.grid-item-5 {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0;
+    margin-left: 10px;
+    grid-column: 3 / span 2;
+    border-top: double;
+    border-right: double;
+    border-bottom: double;
+    border-left: double;
+    border-right-color: darkblue;
+    border-left-color: darkblue;
+    border-top-color: darkblue;
+    border-bottom-color: darkblue;
+    color: darkblue;
+    font-family: cursive;
+}
+/*project 1*/
+
+section.grid-item-6 {
+    display: flex;
+    grid-column: 5/span 3;
+    grid-row: 3;
+    justify-content: center;
+    color: darkblue;
+    font-family: cursive;
+    border-top: double;
+    border-right: double;
+    border-bottom: double;
+    border-left: double;
+    border-right-color: darkblue;
+    border-left-color: darkblue;
+    border-top-color: darkblue;
+    border-bottom-color: darkblue;
+}
+
+section.grid-item-7 {
+    display: flex;
+    margin-left: 10px;
+    background-image: url('images/tuscanyvillla.png');
+    background-size: cover;
+    grid-column: 5 /span 3;
+    margin-right: 10px;
+}
+
+/*project 2*/
+
+section.grid-item-8 {
+    display: flex;
+    color: darkblue;
+    grid-column: 5;
+    margin-left: 10px;
+    background-color: lightblue;
+    margin-top: 10px;
+    border-top: double;
+    border-bottom: double;
+    border-left: double;
+    border-left-color: darkblue;
+    border-top-color: darkblue;
+    border-bottom-color: darkblue;
+}
+
+section.grid-item-9 {
+    display: flex;
+    flex-direction: column;
+    color: darkblue;
+    grid-column: 6 /span 2;
+    grid-row: 5;
+    background-color: lightblue;
+    margin-right: 10px;
+    margin-top: 10px;
+    border-top: double;
+    border-right: double;
+    border-bottom: double;
+    border-right-color: darkblue;
+    border-top-color: darkblue;
+    border-bottom-color: darkblue;
+}
+
+i {
+    display: flex;
+    justify-content: flex-end;
+    grid-row: 5;
+}
+
+a {
+    display: flex;
+    justify-content: flex-start;
+}
+/*project 3*/
+
+section.grid-item-10 {
+    display: flex;
+    background-image: url('images/virtualpet.png');
+    background-size: cover;
+    grid-row: 7;
+    grid-column: 5 /span 3;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+/*pictures*/
+section.grid-item-11 {
+    display: flex;
+    background-image: url('images/pexels-photo.jpg');
+    background-size: cover;
+    grid-column: 3 /span 2;
+    grid-row: 5 / span 2;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+section.grid-item-12 {
+    display: flex;
+    background-image: url('images/pexels-photo-12627 (1).jpeg');
+    background-size: cover;
+    grid-column: 3 /span 2;
+    grid-row: 7;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+/*project 2*/
+section.grid-item-13 {
+    display: flex;
+    grid-column: 5 /span 3;
+    justify-content: center;
+    grid-row: 6;
+    color: darkblue;
+    font-family: cursive;
+    border-top: double;
+    border-right: double;
+    border-bottom: double;
+    border-left: double;
+    border-right-color: darkblue;
+    border-left-color: darkblue;
+    border-top-color: darkblue;
+    border-bottom-color: darkblue;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+/*project 2*/
+
+section.grid-item-14 {
+    display: flex;
+    color: darkblue;
+    grid-column: 5;
+    grid-row: 8;
+    margin-left: 10px;
+    background-color: lightblue;
+    margin-top: 10px;
+    border-top: double;
+    border-bottom: double;
+    border-left: double;
+    border-left-color: darkblue;
+    border-top-color: darkblue;
+    border-bottom-color: darkblue;
+    margin-left: 10px;
+}
+
+section.grid-item-15 {
+    display: flex;
+    flex-direction: column;
+    color: darkblue;
+    grid-column: 6 /span 2;
+    grid-row: 8;
+    background-color: lightblue;
+    margin-right: 10px;
+    margin-top: 10px;
+    border-top: double;
+    border-right: double;
+    border-bottom: double;
+    border-right-color: darkblue;
+    border-top-color: darkblue;
+    border-bottom-color: darkblue;
+    margin-right: 10px;
+}
+/*project 3*/
+section.grid-item-16 {
+    display: flex;
+    background-image: url('images/vp1.png');
+    background-size: cover;
+    grid-row: 10;
+    grid-column: 5/span 3;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+section.grid-item-17 {
+    display: flex;
+    background-image: url('images/vp2.png');
+    background-size: cover;
+    grid-row: 11;
+    grid-column: 5 /span 3;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+section.grid-item-18 {
+    display: flex;
+    grid-column: 5/span 3;
+    justify-content: center;
+    grid-row: 9;
+    color: darkblue;
+    font-family: cursive;
+    border-top: double;
+    border-right: double;
+    border-bottom: double;
+    border-left: double;
+    border-right-color: darkblue;
+    border-left-color: darkblue;
+    border-top-color: darkblue;
+    border-bottom-color: darkblue;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+section.grid-item-19 {
+    display: flex;
+    color: darkblue;
+    grid-column: 5;
+    grid-row: 12;
+    margin-left: 10px;
+    background-color: lightblue;
+    margin-top: 10px;
+    border-top: double;
+    border-bottom: double;
+    border-left: double;
+    border-left-color: darkblue;
+    border-top-color: darkblue;
+    border-bottom-color: darkblue;
+    margin-left: 10px;
+}
+
+section.grid-item-20 {
+    display: flex;
+    flex-direction: column;
+    color: darkblue;
+    grid-column: 6 /span 2;
+    grid-row: 12;
+    background-color: lightblue;
+    border-top: double;
+    border-right: double;
+    border-bottom: double;
+    border-right-color: darkblue;
+    border-top-color: darkblue;
+    border-bottom-color: darkblue;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+/*contact me*/
+section.grid-item-21 {
+    display: flex;
+    justify-content: center;
+    color: darkblue;
+    grid-column: 1;
+    grid-row: 8;
+    background-color: lightblue;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-top: double;
+    border-bottom: double;
+    border-left: double;
+    border-left-color: darkblue;
+    border-top-color: darkblue;
+    border-bottom-color: darkblue;
+}
+
+
+
+section.grid-item-22 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: darkblue;
+    grid-column: 2;
+    grid-row: 8;
+    background-color: lightblue;
+    margin-top: 10px;
+    border-top: double;
+    border-bottom: double;
+    border-top-color: darkblue;
+    border-bottom-color: darkblue;
+}
+
+section.grid-item-23 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: darkblue;
+    grid-column: 3;
+    grid-row: 8;
+    background-color: lightblue;
+    margin-top: 10px;
+    border-top: double;
+    border-bottom: double;
+    border-top-color: darkblue;
+    border-bottom-color: darkblue;
+}
+
+section.grid-item-24 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: darkblue;
+    grid-column: 4;
+    grid-row: 8;
+    background-color: lightblue;
+    margin-top: 10px;
+    border-top: double;
+    border-right: double;
+    border-bottom: double;
+    border-right-color: darkblue;
+    border-top-color: darkblue;
+    border-bottom-color: darkblue;
+    margin-right: 10px;
+}
+
+/*my skills*/ 
+ section.grid-item-25 {
+    display: flex;
+    justify-content: center;
+    color: darkblue;
+    grid-column: 1 /span 4;
+    grid-row: 9;
+    border-bottom: double;
+    border-bottom-color: darkblue;
+    border-left: double;
+    border-right: double;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+section.grid-item-26 {
+    display: flex;
+    justify-content: center;
+    color: darkblue;
+    grid-column: 1 /span 4;
+    grid-row: 10;
+    border-top: double;
+    border-right: double;
+    border-bottom: double;
+    border-left: double;
+    border-right-color: darkblue;
+    border-left-color: darkblue;
+    border-top-color: darkblue;
+    border-bottom-color: darkblue;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+/*picture*/
+section.grid-item-27 {
+    display: flex;
+    background-image: url('images/pexels-photo-204686.jpeg');
+    background-size: cover;
+    grid-column: 1 /span 4;
+    grid-row: 11 /span 2;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+/*created by*/
+section.grid-item-28 {
+    display: flex;
+    grid-column: 1 /span 7;
+    color: darkblue;
+    justify-content: center;
+    font-weight: bold;
+    grid-row: 13;
+    border-top: double;
+    border-right: double;
+    border-bottom: double;
+    border-left: double;
+    border-right-color: darkblue;
+    border-left-color: darkblue;
+    border-top-color: darkblue;
+    border-bottom-color: darkblue;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+div.card-body{
+    height:400px;
+}

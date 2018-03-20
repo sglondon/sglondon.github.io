@@ -1,0 +1,232 @@
+﻿img {
+    
+    border-radius: 50%;
+    display: flex;
+    align-content:flex-start;
+}
+h3.me {
+    display: flex;
+    grid-column: 3/span 2;
+    grid-row: 1;
+    font-family: cursive;
+    color: #415466
+}
+
+p.me{
+    display:flex;
+    grid-row:1;
+    grid-column:2/span 7;
+    font-family:cursive;
+     text-align:center;
+     color: #415466
+
+    
+}
+/*styling for the nav bar*/
+
+ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: center;
+    justify-content: space-around;
+}
+
+a {
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    font-family: cursive;
+    font-size: large;
+    color: darkblue;
+}
+
+/*styling for nav bar*/
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    font-family: cursive;
+    color: #0b5a8a;
+}
+
+.nav {
+    height: 50px;
+    width: 100%;
+    background-color: #83a9cc;
+    position: relative;
+}
+
+    .nav > .nav-header {
+        display: inline;
+    }
+
+        .nav > .nav-header > .nav-title {
+            display: inline-block;
+            font-family: cursive;
+            font-size: 22px;
+            color: #fff;
+            padding: 10px 10px 10px 10px;
+        }
+
+    .nav > .nav-btn {
+        display: none;
+    }
+
+    .nav > .nav-links {
+        display: inline;
+        float: right;
+        font-size: 18px;
+    }
+
+        .nav > .nav-links > a {
+            display: inline-block;
+            padding: 13px 10px 13px 10px;
+            text-decoration: none;
+            color: #efefef;
+        }
+
+            .nav > .nav-links > a:hover {
+                background-color: rgba(0, 0, 0, 0.3);
+            }
+
+    .nav > #nav-check {
+        display: none;
+    }
+
+@media (max-width:600px) {
+    .nav > .nav-btn {
+        display: inline-block;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+    }
+
+        .nav > .nav-btn > label {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            padding: 13px;
+        }
+
+            .nav > .nav-btn > label:hover {
+                background-color: rgba(0, 0, 0, 0.3);
+            }
+
+            .nav > .nav-btn > label > span {
+                display: block;
+                width: 25px;
+                height: 10px;
+                border-top: 2px solid #eee;
+            }
+
+    .nav > .nav-links {
+        position: absolute;
+        display: block;
+        width: 100%;
+        background-color: darkblue;
+        height: 0px;
+        transition: all 0.3s ease-in;
+        overflow-y: hidden;
+        top: 50px;
+        left: 0px;
+    }
+
+        .nav > .nav-links > a {
+            display: block;
+            width: 100%;
+        }
+
+    .nav > #nav-check:not(:checked) + .nav-links {
+        height: 0px;
+    }
+
+    .nav > #nav-check:checked + .nav-links {
+        height: calc(100vh - 50px);
+        overflow-y: auto;
+    }
+}
+
+
+h3#skills {
+    border-bottom: double;
+    border-bottom-color: #286262;
+    font-family: cursive;
+    text-align: center;
+}
+
+
+
+img.card-img-top-img-fluid{
+    height:325px;
+    width:368px;
+}
+
+h3#projects {
+    font-family: cursive;
+    border-bottom: double;
+    border-bottom-color: #286262;
+    text-align: center;
+}
+.container {
+    position: relative;
+    width: 100%;
+}
+.image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 300px;
+    width: 363px;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
+   
+}
+
+.container:hover .overlay {
+    opacity: 1;
+}
+
+.text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+p#hover{
+    text-align:center;
+}
+p{
+    text-align:left;
+}
+
+h3 {
+    
+    border-bottom: double;
+    border-bottom-color:  #286262;
+    text-align: center;
+}
+p#end {
+    text-align: center;
+    border-top: double;
+    border-top-color: #286262;
+}
